@@ -674,7 +674,7 @@ end
 
 
 
--- thx for Dynamic_eG#0001 for making this function
+-- thx for Dynamic_eG#**** for making this function
 function Draw3DText(x,y,z,textInput,scaleX,scaleY)
     local px,py,pz=table.unpack(GetGameplayCamCoords())
     local dist = GetDistanceBetweenCoords(px,py,pz, x,y,z, 1)    
