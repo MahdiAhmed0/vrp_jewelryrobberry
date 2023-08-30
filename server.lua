@@ -1,3 +1,5 @@
+-- بدء استدعاء دوال (فانكشنات) الفي ار بي
+
 local Tunnel = module("vrp", "lib/Tunnel")
 local Proxy = module("vrp", "lib/Proxy")
 
@@ -11,20 +13,26 @@ BMclient = Tunnel.getInterface("vRP_basic_menu","vRP_basic_menu")
 vRPbsC = Tunnel.getInterface("vRP_barbershop","vRP_basic_menu")
 Tunnel.bindInterface("vrp_basic_menu",vRPbm)
 
+-- انتهاء استدعاء دوال (فانكشنات) الفي ار بي
 
-
+-- قيد السرقة
 IsRobbing = false
+
+-- الوقت المتبقي
 RemCan = false
 
-
+-- عدد الجواهر التي يتم سرقتها بـ سرقة مكان واحد
 local rewardjew = math.random(3,13)
+
+-- عدد الفلوس التي تأتي عند بيع الجواهر
 local rewardmoney = math.random(525,5974)
 local moneygive = math.random(5120,7421)
 
 RegisterServerEvent("jewelryrobberry:serverstart")
 AddEventHandler("jewelryrobberry:serverstart", function()
+    -- استدعاء اي دي اللاعب
     user_id = vRP.getUserId({source})
-    local player = vRP.getUserSource({user_id})
+    local player = vRP.getUserSource({user_id}) 
     local cops = vRP.getUsersByGroup({"police"})
     if vRP.hasGroup({user_id,"police"}) then
         vRPclient.notify(player,{"~r~Cops can't rob banks."})
